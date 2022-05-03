@@ -89,14 +89,14 @@ h1, h2, h3, h4, h5, h6, p{
 .header {
     border-bottom: 1px solid #ECECEC;
 }
-.main-nav{
+.header-container{
     display: flex;
 }
-.nav {
+.navigation {
     display: flex;
     align-items: center;
 }
-.logo{
+.header__logo{
     color: var(--logo-color);
     font-family: raleway, sans-serif;
     text-decoration: none;
@@ -104,17 +104,17 @@ h1, h2, h3, h4, h5, h6, p{
     font-size: 26px;
     line-height: 1.19;
 }
-.logo span{
+.header__logo-accent{
     color: var(--accent-color);
 }
-.site-nav{
+.navigation__list{
     display: flex;
     margin-left: 50px;
 }
-.nav-item:not(:last-child){
+.navigation__item:not(:last-child){
     margin-right: 50px;
 }
-.nav-link{
+.navigation__link{
     display: block;
     font-weight: 500;
     line-height: 1.14;
@@ -124,10 +124,10 @@ h1, h2, h3, h4, h5, h6, p{
     transition: color 250ms var(--timing-function);
     
 }
-.link.current{
+.navigation__link-current{
     position: relative;
 }
-.link.current::after {
+.navigation__link-current::after {
     content: '';
     position: absolute;
     left: 0;
@@ -139,19 +139,19 @@ h1, h2, h3, h4, h5, h6, p{
     background-color: var(--accent-color);
 }
 
-.contacts{
+.contacts__list{
     display: flex;
     margin-left: auto;
     align-items: center;
 }
 
-.contacts-item:not(:last-child){
+.contacts__item:not(:last-child){
     margin-right: 50px;
 }
-.contacts-item{
+.contacts__item{
     fill: var(--text-color);
  }
-.contacts-link{
+.contacts__link{
     color: var(--text-color);
     font-weight: 500;
     line-height: 1.14;
@@ -162,12 +162,12 @@ h1, h2, h3, h4, h5, h6, p{
     fill 250ms var(--timing-function);
 }
 
-.mail-icon{
+.contacts__icon-mail{
     width: 16px;
     height: 12px;
     margin-right: 10px;
 }
-.phone-icon{
+.contacts__icon-phone{
     width: 10px;
     height: 16px;
     margin-right: 10px;
@@ -182,6 +182,7 @@ h1, h2, h3, h4, h5, h6, p{
     margin-right: auto;
     max-width: 1600px;
     height: 600px;
+    padding: 200px 0;
     
     background-color: var(--hero-bg-color);
     background-image: linear-gradient(
@@ -193,10 +194,8 @@ h1, h2, h3, h4, h5, h6, p{
     background-size:cover;
     background-position: center;
 }
-.hero.section{
-    padding: 200px 0;
-}
-.hero-title{
+
+.hero__title{
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -230,7 +229,7 @@ h1, h2, h3, h4, h5, h6, p{
 
 /*особливості*/
 
-.visually-hidden {
+.specifics__title-hidden {
     position: absolute;
     white-space: nowrap;
     width: 1px;
@@ -242,17 +241,17 @@ h1, h2, h3, h4, h5, h6, p{
     clip-path: inset(50%);
     margin: -1px;
 }
-.specifics-list{
+.specifics__list{
     display: flex;
     flex-wrap: wrap;
 }
-.specifics-item{
+.specifics__item{
     flex-basis: calc(100%/4 - var(--list-item-gap));
 }
-.specifics-item:not(:last-child){
+.specifics__item:not(:last-child){
 margin-right: var(--list-item-gap);
 }
-.specifics-box{
+.specifics__box{
     display: block;
      width: 100%;
     height: 120px;
@@ -261,35 +260,39 @@ margin-right: var(--list-item-gap);
     margin-bottom: var(--list-item-gap);
     border-radius: 4px;
  }
-.specifics-title{
+.specifics__title{
     font-weight: 700;
     line-height: 1.14;
     font-size: 14px;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
-.specifics-text{
+.specifics__text{
     color: var(--text-color);
     line-height: 1.71;
 }
 
 /*чим займаємось*/
 
-.work.section{
+.work{
     padding-top: 0;
 }
-.work-title{
+.work__title{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     margin-bottom: 50px;
 }
-.work-list{
+.work__list{
     display: flex;
     flex-wrap: wrap;
 }
-.work-item-thumb{
+.work__item:not(:last-child){
+    width: 370px;
+    margin-right: var(--list-item-gap);
+}
+.work__thumb{
     position: relative;
     display: flex;
 }
@@ -302,7 +305,7 @@ margin-right: var(--list-item-gap);
     text-align: center;
     background-color: rgba(47, 48, 58, 0.8);
 }*/
-.work-item-title{
+.work__type{
     position: absolute;
     display: flex;
     left: 0;
@@ -317,70 +320,66 @@ margin-right: var(--list-item-gap);
     text-transform: uppercase;
     color: var(--secondary-color);
 }
-.work-item:not(:last-child){
-    width: 370px;
-    margin-right: var(--list-item-gap);
-}
 
 /*наша команда*/
 
 .team {
     background-color: var(--team-bg-color);
 }
-.team-title{
+.team__title{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     margin-bottom: 50px;
 }
-.team-list{
+.team__list{
     display: flex;
     flex-wrap: wrap;
 }
-.team-item{
+.team__item{
     background-color: var(--secondary-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
-.team-item:not(:last-child){
+.team__item:not(:last-child){
     flex-basis: calc(100%/4 - var(--list-item-gap));
     margin-right: var(--list-item-gap);
 }
-.team-text-container{
+.team__thumb{
     padding: 30px 0 16px;
 }
-.list-title{
+.team__member{
     font-weight: 500;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
     margin-bottom: 10px;
 }
-.list-text {
+.team__position {
     color: var(--text-color);
     font-size: 16px;
     line-height: 1.19;
     text-align: center;
 }
-.socials-list{
+.socials__list{
     display: flex;
 
     padding-left: 32px;
     padding-right: 32px;
     padding-bottom: 30px;
 }
-.socials-item{
+.socials__item{
     display: flex;
 
     padding-bottom: 0;
 }
-.socials-item:not(:last-child){
+.socials__item:not(:last-child){
     margin-right: 10px;
 }
-.socials-link{
+.socials__link{
     display: block;
     width: 44px;
     height: 44px;
@@ -390,36 +389,36 @@ margin-right: var(--list-item-gap);
     transition: fill 250ms var(--timing-function), 
     background-color 250ms var(--timing-function);
 }
-.socials-icon{
-    width: 20px;
-    height: 20px;
-}
- .socials-link:hover,
-.socials-link:focus{
+.socials__link:hover,
+.socials__link:focus{
      background-color: var(--accent-color);
      fill: var(--secondary-color);
+}
+.socials__icon{
+    width: 20px;
+    height: 20px;
 }
 
 /*Наші клієнти*/
 
-.clients-title{
+.clients__title{
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
     text-align: center;
     margin-bottom: 50px;
 }
-.clients-list{
+.clients__list{
     display: flex;
     flex-wrap: wrap;
 }
-.clients-item{
+.clients__item{
     display: flex;
 }
-.clients-item:not(:last-child){
+.clients__item:not(:last-child){
     margin-right: var(--list-item-gap);
 }
-.clients-link{
+.clients__link{
     display: block;
     width: 170px;
     height: 92px;
@@ -430,28 +429,27 @@ margin-right: var(--list-item-gap);
     transition: fill 250ms var(--timing-function),
     border-color 250ms var(--timing-function);
 }
-.clients-icon{
-    width: 106px;
-    height: 60px;
-    
-}
-.clients-link:hover,
-.clients-link:focus{
+.clients__link:hover,
+.clients__link:focus{
     border-color: var(--accent-color);
     fill: var(--accent-color);
+}
+.clients__icon{
+    width: 106px;
+    height: 60px;
 }
 
 /*Сторінка портфоліо*/
 
-.filter-list{
+.filter__list{
     display: flex;
     justify-content: center;
     margin-bottom: 50px;
 }
-.filter-item:not(:last-child){
+.filter__item:not(:last-child){
     margin-right: 8px;
 }
-.filter-button{
+.filter__button{
     border: none;
     padding: 6px 22px;
     border-radius: 4px;
@@ -466,8 +464,8 @@ margin-right: var(--list-item-gap);
     background-color 250ms var(--timing-function),
     box-shadow 250ms var(--timing-function);
 }
-.filter-button:hover,
-.filter-button:focus{
+.filter__button:hover,
+.filter__button:focus{
     background-color: var(--accent-color);
     color: var(--secondary-color);
     box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
@@ -489,16 +487,16 @@ margin-right: var(--list-item-gap);
     margin-bottom: var(--list-item-gap);
     max-width: 370px;
 }*/
-.project-list{
+.project__list{
     display: flex;
     flex-wrap: wrap;
 }
-.project-img-thumb{
+.project__img{
     display: flex;
     position: relative;
     overflow: hidden;
 }
-.project-descr-thumb{
+.project__descr{
     position: absolute;
     top: 100%;
     width: 100%;
@@ -508,46 +506,46 @@ margin-right: var(--list-item-gap);
     transform: translatey(0);
     transition: transform 250ms var(--timing-function);
 }
-.project-item:hover .project-descr-thumb{
+.project__item:hover .project__descr{
     transform: translatey(-100%);
 }
-.project-text-descr{
+.project__text{
     font-weight: 400;
     font-size: 18px;
     line-height: 1.56;
     color: var(--secondary-color);
 }
-.project-item{
+.project__item{
     margin-right: var(--list-item-gap);
     margin-bottom: var(--list-item-gap);
     transition: box-shadow 250ms var(--timing-function);
 
 }
-.project-item:nth-child(3n){
+.project__item:nth-child(3n){
     margin-right: 0;
 }
-.project-item:nth-last-child(-n+3){
+.project__item:nth-last-child(-n+3){
     margin-bottom: 0;
 }
-.project-item:hover{
+.project__item:hover{
 box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
 0px 4px 4px rgba(0, 0, 0, 0.06),
 1px 4px 6px rgba(0, 0, 0, 0.16);
 cursor: pointer;
 }
-.project-text-container {
+.project-container {
     padding: 20px 24px;
     border: 1px solid #EEEEEE;
     border-top: 0;
 }
-.project-title{
+.project__name{
     font-weight: 700;
     font-size: 18px;
     line-height: 2;
     letter-spacing: 0.06em;
     margin-bottom: 4px;
 }
-.project-text{
+.project__type{
     color: var(--text-color);
     font-size: 16px;
     line-height: 1.88;
@@ -559,45 +557,55 @@ cursor: pointer;
     background-color: var(--footer-bg-color);
     padding: 60px 0;
 }
-.footer .container{
+.footer__container{
     display: flex;
     align-items: baseline;
 }
-.footer .logo{
+
+.footer__logo {
     display: block;
     color: var(--secondary-color);
+    font-family: raleway, sans-serif;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.19;
     margin-bottom: 29px;
 }
-.logo.portfolio{
+
+.footer__logo-accent{
+    color: var(--accent-color);
+}
+.footer__logo-portfolio{
     margin-bottom: 20px;
 }
-address{
+.address{
     font-style: normal;
     min-width: 231px;
 }
-.address-item:not(:last-child){
+.address__item:not(:last-child){
     margin-bottom: 8px;
 }
-.address-item.portfolio:not(:last-child){
+.address__item-portfolio:not(:last-child){
     margin-bottom: 9px;
 }
-.map-link {
+.address__map {
     color: var(--secondary-color);
     line-height: 1.71;
     transition: color 250ms var(--timing-function);
 }
-.mail-link,
-.tel-link{
+.address__mail,
+.address__tel{
     line-height: 1.71;
     color: var(--footer-contacts-color);
     transition: color 250ms var(--timing-function);
 }
 
-.join-box{
+.join__box{
     margin-left: 60px;
 }
-.join-title,
-.subscription-title{
+.join__title,
+.subscription__title{
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -605,20 +613,20 @@ address{
     color: var(--secondary-color);
     margin-bottom: 20px;
 }
-.join-list {
+.join__list {
     display: flex;
 }
 
-.join-item {
+.join__item {
     display: flex;
     padding-bottom: 0;
 }
 
-.join-item:not(:last-child) {
+.join__item:not(:last-child) {
     margin-right: 10px;
 }
 
-.join-link {
+.join__link {
     display: block;
     width: 44px;
     height: 44px;
@@ -631,28 +639,28 @@ address{
     background-color 250ms var(--timing-function);
 }
 
-.join-icon {
+.join__link:hover,
+.join__link:focus {
+    background-color: var(--accent-color);
+    fill: var(--secondary-color);
+}
+.join__icon {
     width: 20px;
     height: 20px;
 }
 
-.join-link:hover,
-.join-link:focus {
-    background-color: var(--accent-color);
-    fill: var(--secondary-color);
-}
 
                                         /*форма підписки*/
 
-.subscription-form{
+.subscription__form{
     margin-left: 90px;
     width: 100%;
 }
-.subscription-group{
+.subscription__group{
     display: flex;
     
 }
-.subscription-input{
+.subscription__input{
     display: flex;
     align-items: center;
     padding-left: 16px;
@@ -668,31 +676,31 @@ address{
     
     background-color: transparent;
 }
-.subscription-input:focus{
+.subscription__input:focus{
     color: var(--secondary-color);
 }
 
 
-.subscription-button{
+.subscription__button{
     display: flex;
     align-items: center;
     margin-left: 12px;
     padding: 10px 28px;
 }
-.subscription-icon-send{
+.subscription__button:hover,
+.subscription__button:focus {
+    background-color: #0e7cd6;
+}
+.subscription__button:active {
+    box-shadow: inset 0px 0px 50px -10px #aea4cf;
+}
+.subscription__icon{
     width: 24px;
     height: 24px;
     margin-left: 10px;
 }
         
-.subscription-button:hover,
-.subscription-button:focus {
-    background-color: #0e7cd6;
-}
     
-.subscription-button:active {
-    box-shadow: inset 0px 0px 50px -10px #aea4cf;
-}
 
                             /*backdrop модальне вікно*/
 
@@ -732,7 +740,7 @@ address{
 }
                               /* Кнопка закриття модального вікна*/
     
-.button-close{
+.modal__button{
     position: absolute;
     display: flex;
     align-items: center;
@@ -749,18 +757,18 @@ address{
     transition: fill 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
-.button-close-icon{
+.modal__icon{
     margin: 0;
     width: 11px;
     height: 11px;
 }
 
-.button-close:focus,
-.button-close:hover{
+.modal__button:focus,
+.modal__button:hover{
     fill: var(--accent-color);
 }
 
-.button-close:active{
+.modal__button:active{
     background-color: var(--hero-bg-color);
 }
                                      /*Форма модального вікна*/
@@ -770,7 +778,7 @@ address{
     padding: 40px;
 }
 
-.form-title{
+.form__title{
     margin-bottom: 12px;
     font-weight: 700;
     font-size: 20px;
@@ -780,7 +788,7 @@ address{
     color: var(--primary-text-color);
 }
 
-.form-field{
+.form__field{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -791,7 +799,7 @@ address{
     letter-spacing: 0.01em;
     color: var(--text-color);
 }
-.form-imput{
+.form__imput{
     outline: none;
     margin-top: 4px;
     padding-top: 12px;
@@ -802,7 +810,7 @@ address{
     cursor: pointer;
     transition: fill 250ms var(--timing-function), border-color 250ms var(--timing-function);;
 }
-.form-icon{
+.form__icon{
     position: absolute;
     top: 50%;
     width: 18px;
@@ -810,16 +818,16 @@ address{
     margin-left: 12px;
     transition: fill 250ms var(--timing-function);
 }
-.form-imput:focus,
-.form-imput:hover{
+.form__imput:focus,
+.form__imput:hover{
     border-color: var(--accent-color);
 }
 
-.form-imput:focus-within + .form-icon{
+.form__imput:focus-within + .form__icon{
    fill: var(--accent-color);
 }
 
-.comment{
+.form__comment{
     outline: none;
     resize: none;
     margin-top: 4px;
@@ -832,8 +840,8 @@ address{
     border-radius: 4px;
     transition: border-color 250ms var(--timing-function);
 }
-.comment:focus,
-.comment:hover {
+.form__comment:focus,
+.form__comment:hover {
     border-color: var(--accent-color);
     color: var(--primary-text-color);
 }
@@ -862,7 +870,7 @@ address{
     border-radius: 4px;
 }*/
                                        /*Умови договору*/
-.form-policy{
+.form__policy{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -871,7 +879,7 @@ address{
     line-height: 1.71;
     color: var(--text-color);
 }
-.policy-checkbox{
+.checkbox{
         position: absolute;
         white-space: nowrap;
         width: 1px;
@@ -883,7 +891,7 @@ address{
         clip-path: inset(50%);
         margin: -1px;
 }
-.checkbox-icon{
+.checkbox__icon{
     display: inline-block;
     width: 16px;
     height: 15px;
@@ -891,13 +899,13 @@ address{
     border: 2px solid black;
     border-radius: 2px;
 }
-.policy-checkbox:checked + .checkbox-icon{
+.checkbox:checked + .checkbox__icon{
     border-color: var(--accent-color);
     background-color: var(--accent-color);
     background-image: url(../images/icon-check.svg);
     background-repeat: no-repeat;
 }
-.policy-link{
+.policy__link{
     font-size: 14px;
     line-height: 1.71;
 
@@ -907,7 +915,7 @@ address{
 
                                 /*Кнопка відправити данні*/
 
-.button-send{
+.form__button{
     display: block;
     margin: 0 auto;
 }
