@@ -1,0 +1,51 @@
+.join__box {
+    margin-left: 60px;
+}
+
+.join__title {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: $secondary-color;
+    margin-bottom: 20px;
+}
+
+.join__list {
+    @extend %list;
+    display: flex;
+}
+
+.join__item {
+    display: flex;
+    padding-bottom: 0;
+
+    &:not(:last-child) {
+         margin-right: 10px;
+    }
+}
+
+.join__link {
+    @extend %link;
+    display: block;
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    border-radius: 50%;
+    fill: $secondary-color;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    transition: fill 250ms $timing-function,
+        background-color 250ms $timing-function;
+
+    &:hover,
+    &:focus {
+         background-color: $accent-color;
+        fill: $secondary-color;
+    }
+}
+
+.join__icon {
+    width: 20px;
+    height: 20px;
+}

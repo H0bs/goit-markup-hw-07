@@ -1,0 +1,31 @@
+.address {
+    font-style: normal;
+    min-width: 231px;
+}
+
+.address__list{
+    @extend %list;
+}
+
+.address__item:not(:last-child) {
+    margin-bottom: 8px;
+}
+
+.address__item-portfolio:not(:last-child) {
+    margin-bottom: 9px;
+}
+
+.address__map {
+    @extend %link;
+    color: $secondary-color;
+    line-height: 1.71;
+    transition: color 250ms $timing-function;
+}
+
+.address__mail,
+.address__tel {
+    @extend %link;
+    line-height: 1.71;
+    color: $footer-contacts-color;
+    transition: color 250ms $timing-function;
+}

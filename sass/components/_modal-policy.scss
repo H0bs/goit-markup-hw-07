@@ -1,0 +1,17 @@
+.form__policy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.71;
+    color: $text-color;
+}
+
+.policy__link {
+    font-size: 14px;
+    line-height: 1.71;
+
+    text-decoration-line: underline;
+    color: $accent-color;
+}
