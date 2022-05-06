@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap");
 .portfolio, .hero, .specifics, .work, .team, .clients {
   padding: 94px 0;
 }
@@ -68,7 +69,7 @@
 body {
   background-color: #FFFFFF;
   color: #212121;
-  font-family: roboto, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   letter-spacing: 0.03em;
 }
@@ -148,7 +149,7 @@ p {
 
 .header__logo {
   color: #000000;
-  font-family: raleway, sans-serif;
+  font-family: "Raleway", sans-serif;
   text-decoration: none;
   font-weight: 700;
   font-size: 26px;
